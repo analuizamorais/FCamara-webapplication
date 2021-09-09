@@ -1,18 +1,30 @@
-import React from 'react'
-import styled from 'styled-components'
+import React, {useState} from 'react'
+// import styled from 'styled-components'
+// import Office from './setOffice'
+import Routes from './routes'
 import Navbar from './Navbar'
+import { BrowserRouter } from 'react-router-dom'
+import Login from './view/Login'
 
-const App = () => {
+export default function App() {
+
+  const [user, setUser] = useState(null)
+  
+  // const [user, setUser] = useState({
+  //   id: 1,
+  //   name: 'Pedro',
+  //   avatar: ''
+  // })
+  if(user ===  null) {
+    return (
+      <Login />
+    )
+  }
+
   return (
-    <Container>
-      <Navbar />
-    </Container>
+    <BrowserRouter>
+      <Navbar />    
+      <Routes />
+    </BrowserRouter>
   )
 }
-
-const Container = styled.div`
-  background-color: #656565;
-  height: 200vh;
-`
-
-export default App
