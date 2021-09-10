@@ -15,6 +15,14 @@ export const AreaLogin = styled.div`
         margin-bottom: 25px;
     }
 
+    .organize {
+        display: flex;
+
+        a {
+            color: #ef653c;
+        }
+    }
+
     .form--input{
         text-align: left;
 

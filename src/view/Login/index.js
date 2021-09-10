@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Link } from 'react-router-dom'
+import { BrowserRouter, Switch, Route, Link } from 'react-router-dom'
 import { AreaLogin } from './styled'
 import { BtnDefaultIcons, BtnDefault } from '../../components/Styled'
 import GitHubIcon from '@material-ui/icons/GitHub';
@@ -7,42 +7,85 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 //<GoogleIcon />
 //então vamos utilizar esse:
 import PermIdentityIcon from '@material-ui/icons/PermIdentity'
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos'
+
+import Api from '../../Api'
 
 export default () => {
+
+    const actionLoginGoogle = async () => {
+        Api.googleLogin
+    }
+
     return (
         <BrowserRouter>
-            <AreaLogin>
-                <h1>Faça login em sua conta</h1>
-                <BtnDefaultIcons>
-                    <GitHubIcon />
-                    <div className="center"> Fazer login com o GitHub </div>
-                </BtnDefaultIcons>
-                <BtnDefaultIcons>
-                    <PermIdentityIcon />
-                    <div className="center"> Fazer login com o Google </div>
-                </BtnDefaultIcons>
+            <Switch>
+                <Route exact path="/register"> 
+                    <AreaLogin>
+                        <h1 className="organize">
+                            <Link to="/"> <ArrowBackIosIcon /> </Link>
+                            Crie sua conta</h1>
 
-                <p>ou</p>
+                            <form>
+                            <div className="form--input">
+                                <label>Nome</label>
+                                <input type="text" />
+                            </div>
 
-                <form>
-                    <div className="form--input">
-                        <label>E-mail</label>
-                        <input type="email" />
-                    </div>
+                            <div className="form--input">
+                                <label>E-mail</label>
+                                <input type="email" />
+                            </div>
 
-                    <div className="form--input">
-                        <label>Senha</label>
-                        <input type="password" />
-                    </div>
+                            <div className="form--input">
+                                <label>Senha</label>
+                                <input type="password" />
+                            </div>
 
-                    <BtnDefault>Entrar</BtnDefault>
+                            <BtnDefault>Comece agora!</BtnDefault>
 
-                    <div className="footerLogin"> 
-                        Não tem uma conta? 
-                        <Link to="/register">Registre-se</Link>
-                    </div>
-                </form>
-            </AreaLogin>
+                            <div className="footerLogin"> 
+                                Já tem uma conta? 
+                                <Link to="/">Faça login</Link>
+                            </div>
+                        </form>
+                    </AreaLogin>
+                </Route>
+                <Route exact path="*">
+                    <AreaLogin>
+                        <h1>Faça login em sua conta</h1>
+                        <BtnDefaultIcons>
+                            <GitHubIcon />
+                            <div className="center"> Fazer login com o GitHub </div>
+                        </BtnDefaultIcons>
+                        <BtnDefaultIcons onClick={actionLoginGoogle}>
+                            <PermIdentityIcon />
+                            <div className="center"> Fazer login com o Google </div>
+                        </BtnDefaultIcons>
+
+                        <p>ou</p>
+
+                        <form>
+                            <div className="form--input">
+                                <label>E-mail</label>
+                                <input type="email" />
+                            </div>
+
+                            <div className="form--input">
+                                <label>Senha</label>
+                                <input type="password" />
+                            </div>
+
+                            <BtnDefault>Entrar</BtnDefault>
+
+                            <div className="footerLogin"> 
+                                Não tem uma conta? 
+                                <Link to="/register">Registre-se</Link>
+                            </div>
+                        </form>
+                    </AreaLogin>
+                </Route>
+            </Switch>
         </BrowserRouter>
     )
 }
