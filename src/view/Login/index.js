@@ -11,13 +11,23 @@ import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos'
 
 import Api from '../../Api'
 
-export default ({onReceiveGoogle}) => {
+export default ({onReceive}) => {
 
     const actionLoginGoogle = async () => {
         let result = await Api.googleLogin()
 
         if(result){
-            onReceiveGoogle(result.user)
+            onReceive(result.user)
+        }else {
+            alert("Error")
+        }
+    }
+
+    const actionLoginGitHub = async () => {
+        let result = await Api.gitHubLogin()
+
+        if(result){
+            onReceive(result.user)
         }else {
             alert("Error")
         }
@@ -60,7 +70,7 @@ export default ({onReceiveGoogle}) => {
                 <Route exact path="*">
                     <AreaLogin>
                         <h1>Faça login em sua conta</h1>
-                        <BtnDefaultIcons>
+                        <BtnDefaultIcons onClick={actionLoginGitHub}>
                             <GitHubIcon />
                             <div className="center"> Fazer login com o GitHub </div>
                         </BtnDefaultIcons>

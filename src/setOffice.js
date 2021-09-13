@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { useHistory } from 'react-router-dom';
 //import styled from 'styled-components'
 
@@ -19,7 +19,8 @@ const Office = () => {
     
     return (
         <div>
-            <h1>Para qual escritório você quer realizar o agendamento?</h1>
+            <h1> Olá, </h1>
+            <h2>Para qual escritório você quer realizar o agendamento?</h2>
             <button onClick={() => renderAquilo("Sampa")}>São Paulo</button>
             <button onClick={() => renderAquilo("Santos")}>Santos</button>
         </div>

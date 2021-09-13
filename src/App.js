@@ -15,7 +15,7 @@ export default function App() {
   //   name: 'Pedro',
   //   avatar: ''
   // })
-  const actionLoginDataGoogle = async (u) => {
+  const actionLoginData = async (u) => {
     let newUser = {
       id: u.id,
       name: u.displayname,
@@ -26,9 +26,10 @@ export default function App() {
 
   }
 
+
   if(user ===  null) {
     return (
-      <Login onReceiveGoogle={actionLoginDataGoogle} />
+      <Login onReceive={actionLoginData} />
     )
   }
 
