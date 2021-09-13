@@ -11,10 +11,16 @@ import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos'
 
 import Api from '../../Api'
 
-export default () => {
+export default ({onReceiveGoogle}) => {
 
     const actionLoginGoogle = async () => {
-        Api.googleLogin
+        let result = await Api.googleLogin()
+
+        if(result){
+            onReceiveGoogle(result.user)
+        }else {
+            alert("Error")
+        }
     }
 
     return (

@@ -15,7 +15,7 @@ export default function App() {
   //   name: 'Pedro',
   //   avatar: ''
   // })
-  const actionLoginDataGoogle = (u) => {
+  const actionLoginDataGoogle = async (u) => {
     let newUser = {
       id: u.id,
       name: u.displayname,
