@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+# ORANGE SPACE
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+O espaço especial dos #SangueLaranja que querem voltar ao trabalho presencial nos escritórios do Grupo FCamara.
 
-## Available Scripts
 
-In the project directory, you can run:
+# - Índice:
 
-### `yarn start`
+<a name="ancor"></a>
+:pushpin: - [Descrição do Projeto](#ancor1)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+:pushpin: - [Instalação](#ancor2)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+:pushpin: - [Instalar dependências](#ancor3)
 
-### `yarn test`
+:pushpin: - [Começar](#ancor4)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+:pushpin: - [Tecnologias utilizadas](#ancor5)
 
-### `yarn build`
+:pushpin: - [SQUAD 21](#ancor6)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<a id="ancor1"></a>
+# :speech_balloon: Descrição do Projeto
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  Com o avanço da vacinação e queda nos casos de Covid-19 a empresa abrirá a opção de trabalho em formato híbrido aos seus consultores. Esta aplicação visa auxiliar a organização desta reabertura, de forma segura e flexível. Neste espaço o consultor pode agendar seus dias de trabalho presencial, de forma híbrida ou integral, conforme sua rotina.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<a id="ancor2"></a>
+# :speech_balloon: Instalação
 
-### `yarn eject`
+Primeiro você deve instalar:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Yarn (required)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Então, deve clonar esse projeto:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```bash
+git clone https://github.com/analuizamorais/FCamara-webapplication.git
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<a id="ancor3"></a>
+# :speech_balloon: Instalar dependências
 
-## Learn More
+```bash
+  yarn
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<a id="ancor4"></a>
+# :speech_balloon: Começar
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+  yarn start
+```
 
-### Code Splitting
+<a id="ancor5"></a>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+# :speech_balloon: Tecnologias utilizadas
 
-### Analyzing the Bundle Size
+[![HTML5](https://img.shields.io/badge/Html-orange?style=for-the-badge&logo=Html5&logoColor=ffffff)](#)
+[![CSS3](https://img.shields.io/badge/css-blue?style=for-the-badge&logo=Css3&logoColor=ffffff)](#)
+[![React.Js](https://img.shields.io/badge/React.Js-blue?style=for-the-badge&logo=React&logoColor=ffffff)](#)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+# :speech_balloon: SQUAD 21
 
-### Making a Progressive Web App
+This was done by ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><img src="https://avatars.githubusercontent.com/u/80929132?v=4" width="100px;" alt="Ana Luiza Morais"/><br /><sub><b>Ana Luiza Morais</b></sub></a><br /><a href="https://github.com/Igorbrands/hc22-acct/commits/main?author=analuizamorais" title="Full-stack developer">📖</a></td>
+  </tr>
+</table>
