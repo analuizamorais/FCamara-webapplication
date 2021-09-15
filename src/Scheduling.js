@@ -8,7 +8,8 @@ const Schedule = () => {
     const [date, setDate] = useState(null)
     const {control, handleSubmit} = useForm();
     const submitData = (data) => {
-        console.log(data)
+        //console.log(data)
+        console.log(date)
     }
 
     return (

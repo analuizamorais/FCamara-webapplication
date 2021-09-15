@@ -1,4 +1,4 @@
- export default {
+export default {
     apiKey: "AIzaSyA8apnHTciyiQyJbd3OGTjUv5lvHs8nHp0",
     authDomain: "agendamentos-fcamara.firebaseapp.com",
     projectId: "agendamentos-fcamara",

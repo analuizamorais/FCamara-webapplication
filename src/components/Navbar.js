@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
-const Navbar = () => {
+function Navbar(props){
     const [isOpen, setIsOpen] = useState(false);
+    const nome = props.user.nome
+
     return (
         <Nav>
             <Logo href="">
@@ -14,10 +16,14 @@ const Navbar = () => {
                 <span />
             </Hamburguer>
             <Menu isOpen={isOpen}>
-                <MenuLink href="">Login</MenuLink>
-                <MenuLink href="">Cadastro</MenuLink>
-                <MenuLink href="">Agendamentos</MenuLink>
+                <MenuLink href="/">Home</MenuLink>
+                <MenuLink href="">{nome}</MenuLink>
+                <MenuLink href="">Agendamentos {props.user.id}</MenuLink>
             </Menu>
+            <div className="avatar">
+                <img src={props.user.avatar} />
+                <label>{props.user.name}</label>
+            </div>
         </Nav>
   )
 }
@@ -29,6 +35,32 @@ const Nav = styled.div`
     align-items: center;
     flex-wrap: wrap;
     background: white;
+
+    .avatar {
+        display: flex;
+        align-items: center;
+
+        img {
+            width: 35px;
+            border-radius: 20px;
+            margin-left: 20px;
+            margin-right: 10px;
+            cursor: pointer;
+
+        }
+
+        label {
+            font-size: 14px;
+            cursor: pointer;
+            color: #ef653c;
+
+            @media screen and (max-width: 600px) {
+                label {
+                    display: none;
+                }
+            }
+        }
+    }
 `
 
 const Logo = styled.a`

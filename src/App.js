@@ -6,6 +6,7 @@ import Navbar from './components/Navbar'
 import { BrowserRouter } from 'react-router-dom'
 import Login from './view/Login'
 
+
 export default function App() {
 
   const [user, setUser] = useState(null)
@@ -17,8 +18,8 @@ export default function App() {
   // })
   const actionLoginData = async (u) => {
     let newUser = {
-      id: u.id,
-      name: u.displayname,
+      id: u.email,
+      name: u.displayName,
       avatar: u.photoURL
     }
 
@@ -35,7 +36,7 @@ export default function App() {
 
   return (
     <BrowserRouter>
-      <Navbar />    
+      <Navbar user={user} />    
       <Routes />
     </BrowserRouter>
   )

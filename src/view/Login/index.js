@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom'
 import { AreaLogin } from './styled'
 import { BtnDefaultIcons, BtnDefault } from '../../components/Styled'
@@ -10,8 +10,23 @@ import PermIdentityIcon from '@material-ui/icons/PermIdentity'
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos'
 
 import Api from '../../Api'
+import 'firebase/compat/database'
+import firebaseConfig from '../../firebaseConfig'
+import firebase from 'firebase/compat/app'
+const firebaseApp = firebase.initializeApp(firebaseConfig) 
 
 export default ({onReceive}) => {
+  
+    // function signIn(){
+    //     const { email, password } = this.state;
+    //     console.log(this.state)
+    //     let result = firebase.auth().signInWithEmailAndPassword(email, password)
+    //     if(result){
+    //         onReceive(result.user)
+    //     }else {
+    //         alert("Error")
+    //     }
+    // }
 
     const actionLoginGoogle = async () => {
         let result = await Api.googleLogin()
@@ -23,6 +38,9 @@ export default ({onReceive}) => {
         }
     }
 
+     const teste = async () => {
+        Api.teste()
+     }
     const actionLoginGitHub = async () => {
         let result = await Api.gitHubLogin()
 
@@ -33,6 +51,37 @@ export default ({onReceive}) => {
         }
     }
 
+    const [name, setName] = useState('')
+    const handleOnChangeRegisterName = (a) => {
+        setName(a.target.value)
+    }
+
+    const [email, setEmail] = useState('')
+    const handleOnChangeRegisterEmail = (e) => {
+        setEmail(e.target.value)
+    }
+
+    const [password, setPassword] = useState('')
+    const handleOnChangeRegisterPassword = (i) => {
+        setPassword(i.target.value)
+    }
+
+     const createUser = () => {
+         console.log("bbb")
+         const userRef = firebase.database().ref('User')
+         console.log("aaaa")
+         console.log(email)
+         console.log(password)
+         console.log(name)
+         const userEmailLogin = {
+             name,
+             email,
+             password
+         }
+         console.log(userEmailLogin)
+         userRef.push(userEmailLogin)
+     }
+
     return (
         <BrowserRouter>
             <Switch>
@@ -40,25 +89,26 @@ export default ({onReceive}) => {
                     <AreaLogin>
                         <h1 className="organize">
                             <Link to="/"> <ArrowBackIosIcon /> </Link>
-                            Crie sua conta</h1>
+                            Crie sua conta
+                        </h1>
 
-                            <form>
+                        <form>
                             <div className="form--input">
                                 <label>Nome</label>
-                                <input type="text" />
+                                <input type="text" onChange={handleOnChangeRegisterName} value={name}/>
                             </div>
 
                             <div className="form--input">
                                 <label>E-mail</label>
-                                <input type="email" />
+                                <input type="email" onChange={handleOnChangeRegisterEmail} value={email}/>
                             </div>
 
                             <div className="form--input">
                                 <label>Senha</label>
-                                <input type="password" />
+                                <input type="password" onChange={handleOnChangeRegisterPassword} value={password}/>
                             </div>
 
-                            <BtnDefault>Comece agora!</BtnDefault>
+                            <BtnDefault type="submit" onClick={createUser} >Comece agora!</BtnDefault>
 
                             <div className="footerLogin"> 
                                 Já tem uma conta? 
@@ -81,7 +131,7 @@ export default ({onReceive}) => {
 
                         <p>ou</p>
 
-                        <form>
+                        <form id="authEmailPassword">
                             <div className="form--input">
                                 <label>E-mail</label>
                                 <input type="email" />
@@ -92,7 +142,7 @@ export default ({onReceive}) => {
                                 <input type="password" />
                             </div>
 
-                            <BtnDefault>Entrar</BtnDefault>
+                            <BtnDefault >Entrar</BtnDefault>
 
                             <div className="footerLogin"> 
                                 Não tem uma conta? 
