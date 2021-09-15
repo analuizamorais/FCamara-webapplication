@@ -67,6 +67,6 @@ This was done by ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><img src="https://avatars.githubusercontent.com/u/80929132?v=4" width="100px;" alt="Ana Luiza Morais"/><br /><sub><b>Ana Luiza Morais</b></sub></a><br /><a href="https://github.com/Igorbrands/hc22-acct/commits/main?author=analuizamorais" title="Full-stack developer">📖</a></td>
+    <td align="center"><img src="https://avatars.githubusercontent.com/u/80929132?v=4" width="100px;" alt="Ana Luiza Morais"/><br /><sub><b>Ana Luiza Morais</b></sub></a><br /><a href="https://www.linkedin.com/in/analuizamorais/" title="LinkedIn">Full-stack developer</a></td>
   </tr>
 </table>
