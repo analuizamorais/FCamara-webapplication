@@ -69,6 +69,6 @@ This was done by ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
   <tr>
     <td align="center"><img src="https://avatars.githubusercontent.com/u/80929132?v=4" width="100px;" alt="Ana Luiza Morais"/><br /><sub><b>Ana Luiza Morais</b></sub></a><br /><a href="https://www.linkedin.com/in/analuizamorais/" title="LinkedIn">Full-stack Developer</a></td>
     <td align="center"><img src="https://media-exp1.licdn.com/dms/image/D4E35AQFM2q6M0UE5iw/profile-framedphoto-shrink_800_800/0/1622925276532?e=1631847600&v=beta&t=Lw25-RUrwrMCLNk8Pet0lQ0HZugRQdFFuG_pIZFJLxA" width="100px;" alt="Maíra Soares"/><br /><sub><b>Maíra Soares</b></sub></a><br /><a href="https://www.linkedin.com/in/mairalsoares/" title="LinkedIn">UX Designer</a></td>
-    <td align="center"><img src="https://th.bing.com/th/id/R.4b1bb228bf826befdb5e9d530b8738fa?rik=S8WWdffVARYPsg&pid=ImgRaw&r=0" width="100px;" alt="Breno Lyra"/><br /><sub><b>Breno Lyra</b></sub></a><br /><a href="https://www.linkedin.com/in/analuizamorais/" title="LinkedIn">UX Designer</a></td>
+    <td align="center"><img src="https://media-exp1.licdn.com/dms/image/C4E03AQHoe0TNXNJyZQ/profile-displayphoto-shrink_800_800/0/1558548298462?e=1637193600&v=beta&t=59UnvNZ_nn9btuBvVOxaKCR4hP0H67CNbyTHOn0L3lU" width="100px;" alt="Breno Lyra"/><br /><sub><b>Breno Lyra</b></sub></a><br /><a href="https://www.linkedin.com/in/brenolyra/" title="LinkedIn">UX Designer</a></td>
   </tr>
 </table>
