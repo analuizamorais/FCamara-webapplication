@@ -11,11 +11,6 @@ export default function App() {
 
   const [user, setUser] = useState(null)
   
-  // const [user, setUser] = useState({
-  //   id: 1,
-  //   name: 'Pedro',
-  //   avatar: ''
-  // })
   const actionLoginData = async (u) => {
     let newUser = {
       id: u.email,

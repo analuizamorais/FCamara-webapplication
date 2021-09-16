@@ -1,10 +1,10 @@
 import React from 'react';
-import Office from '../../setOffice';
+import Sort from '../Schedule/Sort';
 
 export default function App(props) {
     return (
         <>
-            <Office />
+            <Sort/>
         </>
     );
 }

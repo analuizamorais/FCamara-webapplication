@@ -1,14 +1,11 @@
-import React, {useState} from 'react'
+import React from 'react'
 import { useHistory } from 'react-router-dom';
-import { BtnOffice, AreaOffice } from './components/Styled'
-//import styled from 'styled-components'
+import { BtnOffice, AreaOffice } from '../../components/Styled'
 
 const Office = () => {
-    //const [isOfficeSelected, setOfficeSelected] = useState(false);
     const history = useHistory();
-    localStorage.clear();
 
-    function renderAquilo(office){
+    function setCity(office){
         localStorage.setItem("office", office);
         history.push('/schedule');
     }
@@ -20,9 +17,9 @@ const Office = () => {
             <h3>Para começar, por gentileza, escolha em qual escritório você deseja ir.</h3>
             <AreaOffice>
                     <p>
-                        <BtnOffice onClick={() => renderAquilo("São Paulo")}>São Paulo </BtnOffice>
+                        <BtnOffice onClick={() => setCity("São Paulo")}>São Paulo </BtnOffice>
                     </p>
-                <BtnOffice onClick={() => renderAquilo("Santos")}>Santos</BtnOffice>
+                <BtnOffice onClick={() => setCity("Santos")}>Santos</BtnOffice>
             </AreaOffice>
         </div>
   )
