@@ -57,6 +57,7 @@ git clone https://github.com/analuizamorais/FCamara-webapplication.git
 [![HTML5](https://img.shields.io/badge/Html-orange?style=for-the-badge&logo=Html5&logoColor=ffffff)](#)
 [![CSS3](https://img.shields.io/badge/css-blue?style=for-the-badge&logo=Css3&logoColor=ffffff)](#)
 [![React.Js](https://img.shields.io/badge/React.Js-blue?style=for-the-badge&logo=React&logoColor=ffffff)](#)
+[![Firebase](https://th.bing.com/th/id/R.c7c2e3514a4f34cc2bbad0f999e7b6a7?rik=I0QqAV2x%2bhxbQQ&pid=ImgRaw&r=0)](#)
 
 # :speech_balloon: SQUAD 21
 
