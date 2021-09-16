@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import {DatePicker} from '@material-ui/pickers'
 import {useForm, Controller} from 'react-hook-form'
 import Button from '@material-ui/core/Button'
+import {BtnDateFormat} from './components/Styled'
 
 const Schedule = () => { 
     const city = localStorage.getItem("office")
@@ -13,9 +14,8 @@ const Schedule = () => {
     }
 
     return (
-        <div>
-            <h1>AAAAAAAAAAAAAAAA {city}</h1>
-            <h2> escolha a data</h2>
+        <div align="center" padding="30px">
+            <h1>Escritório selecionado! Agora, selecione um dia.</h1>
             <form onSubmit={handleSubmit(submitData)}>
                 <Controller defaultValue={date} name="scheduleDate" control={control} 
                 render={({ field }) => (
@@ -30,7 +30,7 @@ const Schedule = () => {
                     disablePast/>
                 )}
                 />
-                <Button variant="contained" type="submit">OK</Button>
+                <BtnDateFormat variant="contained" type="submit">OK</BtnDateFormat>
             </form>
         </div>
   )

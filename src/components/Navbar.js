@@ -16,14 +16,15 @@ function Navbar(props){
                 <span />
             </Hamburguer>
             <Menu isOpen={isOpen}>
-                <MenuLink href="/">Home</MenuLink>
-                <MenuLink href="">{nome}</MenuLink>
-                <MenuLink href="">Agendamentos {props.user.id}</MenuLink>
+                <MenuLink href="">            
+                    <div className="avatar" >
+                        <img src={props.user.avatar} />
+                            <label>{props.user.name}</label>
+                    </div>
+                </MenuLink>
+                <MenuLink href="/">Dashboard</MenuLink>
+                <MenuLink href=""> Logout </MenuLink>
             </Menu>
-            <div className="avatar">
-                <img src={props.user.avatar} />
-                <label>{props.user.name}</label>
-            </div>
         </Nav>
   )
 }

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom'
-import { AreaLogin } from './styled'
+import { AreaLogin, Nav, Logo } from './styled'
 import { BtnDefaultIcons, BtnDefault } from '../../components/Styled'
 import GitHubIcon from '@material-ui/icons/GitHub';
 //import GoogleIcon from '@mui/icons-material/Google'; icon indiponível no material-ui e até mesmo nos icons da google
@@ -86,6 +86,11 @@ export default ({onReceive}) => {
         <BrowserRouter>
             <Switch>
                 <Route exact path="/register"> 
+                    <Nav>
+                        <Logo href="">
+                            <img src="https://brasscom.org.br/wp-content/uploads/2020/05/Logotipo-FCamara.png" alt="grupo fcamara" width="70px" height="auto"/>
+                        </Logo>
+                    </Nav>
                     <AreaLogin>
                         <h1 className="organize">
                             <Link to="/"> <ArrowBackIosIcon /> </Link>
@@ -118,8 +123,13 @@ export default ({onReceive}) => {
                     </AreaLogin>
                 </Route>
                 <Route exact path="*">
+                    <Nav>
+                        <Logo href="">
+                            <img src="https://brasscom.org.br/wp-content/uploads/2020/05/Logotipo-FCamara.png" alt="grupo fcamara" width="70px" height="auto"/>
+                        </Logo>
+                    </Nav>
                     <AreaLogin>
-                        <h1>Faça login em sua conta</h1>
+                        <h1>Olá, Sangue Laranja!</h1>
                         <BtnDefaultIcons onClick={actionLoginGitHub}>
                             <GitHubIcon />
                             <div className="center"> Fazer login com o GitHub </div>
@@ -145,8 +155,8 @@ export default ({onReceive}) => {
                             <BtnDefault >Entrar</BtnDefault>
 
                             <div className="footerLogin"> 
-                                Não tem uma conta? 
-                                <Link to="/register">Registre-se</Link>
+                                Ainda não tem uma conta? 
+                                <p><Link to="/register">Cadastre-se</Link></p>
                             </div>
                         </form>
                     </AreaLogin>

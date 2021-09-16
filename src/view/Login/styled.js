@@ -8,7 +8,7 @@ export const AreaLogin = styled.div`
     margin-top: 20px;  
     text-align: center;
     border-radius: 5px;
-    box-shadow: 0px 0px 10px #ccc;
+    //box-shadow: 0px 0px 10px #ccc;
 
     h1{
         font-size: 24px;
@@ -61,4 +61,17 @@ export const AreaLogin = styled.div`
             }
         }
 }
+`
+export const Nav = styled.div`
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    background: white;
+`
+
+export const Logo = styled.a`
+    padding: 1rem 0;
+
 `
