@@ -12,6 +12,9 @@ const MySchedules = () => {
     const history = useHistory();
    const [scheduleList, setScheduleList] = useState()
 
+    //Puxa do banco de dados os agendamentos registrados
+    //Não tive tempo de implementar, mas iria colocar um filtro para que só fossem exibidos aqueles que tivessem 
+    //o mesmo email do usuário logado
     useEffect(() => {
         const scheduleRef = firebase.database().ref('Schedule')
         scheduleRef.on('value', (snapshot) => {
@@ -19,11 +22,11 @@ const MySchedules = () => {
              const schedule = snapshot.val()
              const scheduleList = [];
              scheduleList.push(schedule[1])
-            //  for (let id in schedule){
-            //      scheduleList.push(schedule[1])
+                for (let id in schedule){
+                  scheduleList.push(schedule[1])
                  
-            //      console.log(scheduleList.push(schedule))
-            //  }
+                  console.log(scheduleList.push(schedule))
+                } 
         })
     }, [])
 

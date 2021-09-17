@@ -1,23 +1,29 @@
 import React, {useState} from 'react'
 import { BtnOffice, AreaOffice } from '../../components/Styled'
+import { useHistory } from 'react-router-dom';
 
 import 'firebase/compat/database'
 import firebaseConfig from '../../firebaseConfig'
 import firebase from 'firebase/compat/app'
 const firebaseApp = firebase.initializeApp(firebaseConfig) 
 
-const Confirmation = (props) => { 
+const Confirmation = () => { 
+
+    const history = useHistory();
+
+    //Coleta os dados passados pelo localStorage durante a utilização da aplicação
     const city = localStorage.getItem("office")
     const date = localStorage.getItem("date")
     const sort = localStorage.getItem("sort")
     const email = localStorage.getItem("email")
-    console.log(email)
 
+    //Coloca a descrição em uma variável
     const [description, setDescription] = useState('Sem descrição')
     const handleOnChangeDescription = (a) => {
         setDescription(a.target.value)
     }
 
+    //Registra o novo agendamento no banco de dados
     const createSchedule = () => {
         const scheduleRef = firebase.database().ref('Schedule')
         const schedule = {
@@ -28,6 +34,7 @@ const Confirmation = (props) => {
             description
         }
         scheduleRef.push(schedule)
+        history.push('/myschedules')
     }
     return (
         <AreaOffice>
@@ -38,8 +45,9 @@ const Confirmation = (props) => {
                 <p>Escritório: {city}</p>
                 <p> Data: {date}</p>
 
-                <p> Deseja adicionar alguma descrição?</p>
+                <label for="descrição"><p> Deseja adicionar alguma descrição?</p></label>
                 <textarea
+                    id="descrição"
                     aria-label="empty textarea"
                     placeholder="Descrição do agendamento."
                     value={description}

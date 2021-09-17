@@ -7,7 +7,7 @@ function Navbar(props){
 
     return (
         <Nav>
-            <Logo href="">
+            <Logo href="" alt="logo da fcamara">
                 <img src="https://brasscom.org.br/wp-content/uploads/2020/05/Logotipo-FCamara.png" alt="grupo fcamara" width="70px" height="auto"/>
             </Logo>
             <Hamburguer onClick={() => setIsOpen(!isOpen)}>
@@ -18,7 +18,7 @@ function Navbar(props){
             <Menu isOpen={isOpen}>
                 <MenuLink href="">            
                     <div className="avatar" >
-                        <img src={props.user.avatar} />
+                        <img src={props.user.avatar} alt="foto do usuário logado" />
                             <label>{props.user.name}</label>
                     </div>
                 </MenuLink>
@@ -28,6 +28,8 @@ function Navbar(props){
         </Nav>
   )
 }
+
+//estilização do menú 
 
 const Nav = styled.div`
     padding: 0 2rem;

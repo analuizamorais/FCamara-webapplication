@@ -18,9 +18,8 @@ const firebaseApp = firebase.initializeApp(firebaseConfig)
 
 export default ({onReceive}) => {
   
+    //Verificação para logar via email e senha
      function signIn(){
-        //  const { email, password } = this.state;
-        //  console.log(this.state)
          let result = firebase.auth().signInWithEmailAndPassword(email, password)
          if(result){
              onReceive(result.user)
@@ -29,6 +28,7 @@ export default ({onReceive}) => {
          }
      }
 
+    //Chama a API para logar através do Google
     const actionLoginGoogle = async () => {
         let result = await Api.googleLogin()
 
@@ -39,6 +39,7 @@ export default ({onReceive}) => {
         }
     }
 
+    //Chama a API para logar através do GitHub
     const actionLoginGitHub = async () => {
         let result = await Api.gitHubLogin()
 
@@ -49,6 +50,7 @@ export default ({onReceive}) => {
         }
     }
 
+    //Para atribuir os valores do formulário às variáveis conforme elessão alterados
     const [name, setName] = useState('')
     const handleOnChangeName = (a) => {
         setName(a.target.value)
@@ -64,6 +66,7 @@ export default ({onReceive}) => {
         setPassword(i.target.value)
     }
 
+    //Registra o novo usuário no banco de dados
      const createUser = () => {
          const userRef = firebase.database().ref('User')
          const userEmailLogin = {
@@ -91,18 +94,18 @@ export default ({onReceive}) => {
 
                         <form>
                             <div className="form--input">
-                                <label>Nome</label>
-                                <input type="text" onChange={handleOnChangeName} value={name}/>
+                                <label for="nome">Nome</label>
+                                <input type="text" id="nome" name="nome" onChange={handleOnChangeName} value={name}/>
                             </div>
 
                             <div className="form--input">
-                                <label>E-mail</label>
-                                <input type="email" onChange={handleOnChangeEmail} value={email}/>
+                                <label for="email">E-mail</label>
+                                <input type="email" id="email" name="email"  onChange={handleOnChangeEmail} value={email}/>
                             </div>
 
                             <div className="form--input">
-                                <label>Senha</label>
-                                <input type="password" onChange={handleOnChangePassword} value={password}/>
+                                <label for="senha">Senha</label>
+                                <input type="password" id="senha" name="senha"  onChange={handleOnChangePassword} value={password}/>
                             </div>
 
                             <BtnDefault type="submit" onClick={createUser}> Comece agora! </BtnDefault>
@@ -135,13 +138,13 @@ export default ({onReceive}) => {
 
                         <form id="authEmailPassword">
                             <div className="form--input">
-                                <label>E-mail</label>
-                                <input type="email" onChange={handleOnChangeEmail}/>
+                                <label for="email">E-mail</label>
+                                <input type="email" id="email" name="email"  onChange={handleOnChangeEmail}/>
                             </div>
 
                             <div className="form--input">
-                                <label>Senha</label>
-                                <input type="password" onChange={handleOnChangePassword}/>
+                                <label for="senha">Senha</label>
+                                <input type="password" id="senha" name="senha" onChange={handleOnChangePassword}/>
                             </div>
 
                             <BtnDefault onClick={signIn}>Entrar</BtnDefault>

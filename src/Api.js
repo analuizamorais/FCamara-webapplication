@@ -12,6 +12,8 @@ const firebaseApp = firebase.initializeApp(firebaseConfig)
 
 export default {
 
+    //Realiza a verificação pelas aplicações (Google e GitHub) em um pop-up
+
     googleLogin: async () => {
         const providerGoogle = new firebase.auth.GoogleAuthProvider()
         let result = await firebase.auth().signInWithPopup(providerGoogle)
@@ -23,12 +25,5 @@ export default {
         let result = await firebase.auth().signInWithPopup(providerGitHub)
         console.log(result)
         return result
-    },
-    teste: async () => {
-        const userRef = firebase.database().ref('User')
-        const testee = "teste"
-        const userEmailLoginteste = { testee, teste2: false }
-        console.log(userEmailLoginteste)
-        userRef.push(userEmailLoginteste)
     }
 }
