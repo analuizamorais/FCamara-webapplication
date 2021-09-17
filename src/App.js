@@ -13,7 +13,7 @@ export default function App() {
   
   const actionLoginData = async (u) => {
     let newUser = {
-      id: u.email,
+      email: u.email,
       name: u.displayName,
       avatar: u.photoURL
     }
@@ -29,6 +29,7 @@ export default function App() {
     )
   }
 
+  localStorage.setItem("email", user.email);
   return (
     <BrowserRouter>
       <Navbar user={user} />    

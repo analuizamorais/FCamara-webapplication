@@ -1,10 +1,10 @@
 import React from 'react';
-import Sort from '../Schedule/Sort';
+import MySchedules from '../Schedule/mySchedules';
 
 export default function App(props) {
     return (
         <>
-            <Sort/>
+            <MySchedules/>
         </>
     );
 }

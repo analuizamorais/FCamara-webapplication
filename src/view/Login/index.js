@@ -11,22 +11,23 @@ import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos'
 
 import Api from '../../Api'
 import 'firebase/compat/database'
+import 'firebase/compat/auth'
 import firebaseConfig from '../../firebaseConfig'
 import firebase from 'firebase/compat/app'
 const firebaseApp = firebase.initializeApp(firebaseConfig) 
 
 export default ({onReceive}) => {
   
-    // function signIn(){
-    //     const { email, password } = this.state;
-    //     console.log(this.state)
-    //     let result = firebase.auth().signInWithEmailAndPassword(email, password)
-    //     if(result){
-    //         onReceive(result.user)
-    //     }else {
-    //         alert("Error")
-    //     }
-    // }
+     function signIn(){
+        //  const { email, password } = this.state;
+        //  console.log(this.state)
+         let result = firebase.auth().signInWithEmailAndPassword(email, password)
+         if(result){
+             onReceive(result.user)
+         }else {
+             alert("Error")
+         }
+     }
 
     const actionLoginGoogle = async () => {
         let result = await Api.googleLogin()
@@ -38,9 +39,6 @@ export default ({onReceive}) => {
         }
     }
 
-     const teste = async () => {
-        Api.teste()
-     }
     const actionLoginGitHub = async () => {
         let result = await Api.gitHubLogin()
 
@@ -52,33 +50,27 @@ export default ({onReceive}) => {
     }
 
     const [name, setName] = useState('')
-    const handleOnChangeRegisterName = (a) => {
+    const handleOnChangeName = (a) => {
         setName(a.target.value)
     }
 
     const [email, setEmail] = useState('')
-    const handleOnChangeRegisterEmail = (e) => {
+    const handleOnChangeEmail = (e) => {
         setEmail(e.target.value)
     }
 
     const [password, setPassword] = useState('')
-    const handleOnChangeRegisterPassword = (i) => {
+    const handleOnChangePassword = (i) => {
         setPassword(i.target.value)
     }
 
      const createUser = () => {
-         console.log("bbb")
          const userRef = firebase.database().ref('User')
-         console.log("aaaa")
-         console.log(email)
-         console.log(password)
-         console.log(name)
          const userEmailLogin = {
              name,
              email,
              password
          }
-         console.log(userEmailLogin)
          userRef.push(userEmailLogin)
      }
 
@@ -100,20 +92,20 @@ export default ({onReceive}) => {
                         <form>
                             <div className="form--input">
                                 <label>Nome</label>
-                                <input type="text" onChange={handleOnChangeRegisterName} value={name}/>
+                                <input type="text" onChange={handleOnChangeName} value={name}/>
                             </div>
 
                             <div className="form--input">
                                 <label>E-mail</label>
-                                <input type="email" onChange={handleOnChangeRegisterEmail} value={email}/>
+                                <input type="email" onChange={handleOnChangeEmail} value={email}/>
                             </div>
 
                             <div className="form--input">
                                 <label>Senha</label>
-                                <input type="password" onChange={handleOnChangeRegisterPassword} value={password}/>
+                                <input type="password" onChange={handleOnChangePassword} value={password}/>
                             </div>
 
-                            <BtnDefault type="submit" onClick={createUser} >Comece agora!</BtnDefault>
+                            <BtnDefault type="submit" onClick={createUser}> Comece agora! </BtnDefault>
 
                             <div className="footerLogin"> 
                                 Já tem uma conta? 
@@ -144,15 +136,15 @@ export default ({onReceive}) => {
                         <form id="authEmailPassword">
                             <div className="form--input">
                                 <label>E-mail</label>
-                                <input type="email" />
+                                <input type="email" onChange={handleOnChangeEmail}/>
                             </div>
 
                             <div className="form--input">
                                 <label>Senha</label>
-                                <input type="password" />
+                                <input type="password" onChange={handleOnChangePassword}/>
                             </div>
 
-                            <BtnDefault >Entrar</BtnDefault>
+                            <BtnDefault onClick={signIn}>Entrar</BtnDefault>
 
                             <div className="footerLogin"> 
                                 Ainda não tem uma conta? 

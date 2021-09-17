@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 function Navbar(props){
     const [isOpen, setIsOpen] = useState(false);
-    const nome = props.user.nome
+    //localStorage.setItem("email", props.user.email);
 
     return (
         <Nav>
@@ -91,7 +91,7 @@ const MenuLink = styled.a`
     cursor: pointer;
     text-align: center;
     text-decoration: none;
-    color: #ef653c;
+    color: #36357e;
     transition: all 0.3s ease-in;
     font-size: 0.9rem;
 
