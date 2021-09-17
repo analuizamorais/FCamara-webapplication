@@ -3,7 +3,6 @@ import styled from 'styled-components'
 
 function Navbar(props){
     const [isOpen, setIsOpen] = useState(false);
-    //localStorage.setItem("email", props.user.email);
 
     return (
         <Nav>
